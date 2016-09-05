@@ -7,7 +7,7 @@ print "start remote_ppt_controller"
 
 VirtualKeyStroke.press('F5')
 
-s = OSC.OSCServer(('127.0.0.1', 7777))
+s = OSC.OSCServer(('localhost', 3000))
 print s
 
 # define a message-handler function for the server to call.
@@ -23,6 +23,7 @@ def home(addr, tags, data, source):
 s.addMsgHandler("/page_up", page_up)
 s.addMsgHandler("/page_down", page_down)
 s.addMsgHandler("/homepage", home)
+s.addDefaultHandlers()
 
 print "\nStarting OSCServer. Use ctrl-C to quit."
 st = threading.Thread(target=s.serve_forever)
