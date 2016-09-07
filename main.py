@@ -29,7 +29,7 @@ def send_page_number_back(source):
         c.connect((source[0], client_listent_port))
         print c
 
-    msg = OSCMessage("/page_number")
+    msg = OSC.OSCMessage("/page_number")
     msg.append(page_number)
     c.send(msg)
 
@@ -46,8 +46,8 @@ def page_down(addr, tags, data, source):
     VirtualKeyStroke.press('page_down')
     global page_number
     page_number += 1
-    if page_down > max_page_number - 1:
-        max_page_number = max_page_number - 1
+    if page_number > max_page_number - 1:
+        page_number = max_page_number - 1
     send_page_number_back(source)
 
 def home(addr, tags, data, source):
