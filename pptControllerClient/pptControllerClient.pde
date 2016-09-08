@@ -17,7 +17,7 @@ void setup() {
   /* start oscP5, listening for incoming messages at port 12000 */
   oscP5 = new OscP5(this, 3001);
 
-  myRemoteLocation = new NetAddress("127.0.0.1", 3000);
+  myRemoteLocation = new NetAddress("192.168.232.1", 3000);
 }
 
 void keyReleased() {

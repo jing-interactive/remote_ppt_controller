@@ -15,7 +15,7 @@ output message types: /page_number + int
 '''
 
 c = None
-s = OSC.OSCServer(('localhost', server_listent_port))
+s = OSC.OSCServer(('', server_listent_port))
 print s
 
 VirtualKeyStroke.press('F5')
